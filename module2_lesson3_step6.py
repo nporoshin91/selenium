@@ -14,11 +14,12 @@ options.add_argument("--window-position=0,0")
 
 try:
     browser = webdriver.Chrome()
-    browser.get("http://suninjuly.github.io/alert_accept.html")
+    browser.get("http://suninjuly.github.io/redirect_accept.html")
     browser.maximize_window()
 
-    browser.find_element_by_css_selector(".btn.btn-primary").click()
-    browser.switch_to.alert().accept()
+    browser.find_element_by_xpath("//button[contains(text(), 'I want to go on a magical journey!')]").click()
+    new_window = browser.window_handles[1]
+    browser.switch_to.window(new_window)
 
     value_of_x = browser.find_element_by_id("input_value").text
     calculated_value_of_x = calc(value_of_x)

@@ -21,7 +21,7 @@ try:
     browser.get("http://suninjuly.github.io/explicit_wait2.html")
     browser.maximize_window()
 
-    # говорим Selenium проверять в течение 5 секунд, пока кнопка не станет кликабельной
+    # говорим Selenium проверять в течение 12 секунд, пока кнопка не станет кликабельной
     button = WebDriverWait(browser, 12).until(ec.text_to_be_present_in_element((By.ID, "price"), "$100"))
     # говорим Selenium проверять в течение 5 секунд пока кнопка станет неактивной
     # button = WebDriverWait(browser, 5).until_not(ec.element_to_be_clickable((By.ID, "verify")))

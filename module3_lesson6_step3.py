@@ -13,10 +13,10 @@ options = Options()
 options.add_argument("--window-position=0,0")
 
 
-@pytest.fixture()
+@pytest.fixture
 def browser():
     print("\nstart browser for test..")
-    browser = webdriver.Chrome()
+    browser = webdriver.Chrome(options=options)
     browser.maximize_window()
     yield browser
     print("\nquit browser..")
